@@ -10,19 +10,14 @@ nl
 space
 tab
 
-
-
-
-
 ************************************************************************
 ************************** [QUOTES] ************************************
 ************************************************************************
-
 echo '1'''
 echo '1'2'3' '1'2'3' 
 echo '1'''"2"
-cd 'M'ini"Sh"el"l" 'M'ini"Sh"el"l"aa
-cd 'M'ini"Sh"el"l" 'M'ini"Sh"el"l"aa''"  ''""        "
+echo 'M'ini"Sh"el"l" 'M'ini"Sh"el"l"aa
+echo 'M'ini"Sh"el"l" 'M'ini"Sh"el"l"aa''"  ''""        "
 echo '"M"ini''"Sh"el"l"'
 echo '"M"ini''"Sh"el"l"'echo '"M"ini''"Sh"el"l"'
 echo "'1''2'"2
@@ -50,8 +45,8 @@ echo "my homefolder is -->" "'""$HOME""'" "<--"
 
 echo ";"
 
-my homefolder is --> 'HOME' <--
-my homefolder is --> 'HOME' <--
+echo my homefolder is --> 'HOME' <--
+echo my homefolder is -- 'HOME' --
 
 echo '"' $HOME'"'
 echo '"'    $HOME'"'
@@ -60,7 +55,6 @@ echo '"'     $HOME'"'
 ********************************************************************
 ************************** [REDIRECTIONS] **************************
 ********************************************************************
-
 cat>test
 <a cat>test
 cat test > test
@@ -114,44 +108,50 @@ echo <
 '<'>>'>>>>'""a
 <a'''>>'>b''>''""c
 
-
-
 ********************************************************************
 ***************************** [ENVP] *******************************
 ********************************************************************
+
+$
+
+echo "$."
 
 echo ''$PATH''HOME''
 echo ''"$"HOME''HOME'' cat
 echo ''$HOME''HOME"$HOME"
 echo ''$HOME''HOME
 echo ''$''HOME
+echo ''"$""$''"$''HOME
+echo ''"$""$''"''HOME
 echo ''"$"''HOME
-echo $'HOME'
+echo $'HOME' a $HOME
+echo a''$'asdf$asdf' $'HOME' a $HOME
 echo $HOME
 echo ''"$"''HOME
 echo ''"$HOME"''HOME
-echo ''"$''"''HOME
-echo "$."
+echo $''"$''"''HOME
 echo "$''""$'$'$'$'$'$'$'$'$""$''home""$a''"
-echo "$''"$'$'$'$'$'$'$'$'$"$''home""$a''"
+echo "$''"$'$'$'$'$'$'$'$'$"$''home""$a''" 
 echo "$''""$''$''$''$''$''$''$''$''$"$''home""$a''
 echo "$''""$''$''$''$''$''$''$''$''$""$''home"$a''
 echo $'PATH'
 echo "$'PATH'"
 echo "$HOME'PATH'"
-echo $HOME
+echo $HOME a''$HOME'' $b a $HOME
 echo ''"$"''HOME
 echo ''$HOME''HOME
 echo ''$PATH''HOME''
+echo ''$PATH'$"$"$'HOME''
+echo ''$PATH$"$"$HOME'$'$''e
 echo ''"$"HOME''HOME''
 echo ''$HOME''HOME"$HOME"
 echo "$''home"
 echo ''"$as"HOME''HOME''
 echo "$ab''home"
-echo "$'A'$qwer$$$"
 echo $''"$''""$''home""$a''"
 echo $''1"$''""$''home""$a''"
 echo '$'$HOME"$"
+echo $HOME'$'$HOME
 echo ''$HOME''HOME"$HOME"
 echo "$''home"
 echo ''$''"$''HOMEAlk"$HOME''$HOME"$HOME"
@@ -163,21 +163,18 @@ echo "" "$"HOME''HOME''
 echo """$"HOME''HOME''
 echo "   "''"$""$''home""$a''"
 echo "   """"$""$''home""$a''"
-asdf$HOME$HOME
+echo asdf$HOME$HOME
+echo $a''asdf$HOME$HOME
+echo $HOME''$a''asdf$HOME$HOME
+echo $'PATH'$''$"$"
+echo a $a a
+echo a $'' a
+echo a $HOME a
 
-echo "   ""$$$$$""$''home""$a''"
-echo '   '"$$$$$""$''home""$a''"
-echo "$$$"$"$''home""$a''"
-echo $$$$$$$$"$ab''home"
-echo $$$$'$'$"$"
-echo "$$$"$"''PATH''HOMEAlk"
-echo "$$$$$$$$$""$''home""$a''"
-echo """$$$$$""$''home""$a''"
-echo "$$$$$$$$$""$''home""$a''"
-echo $"$$$$$$$$$""$''home""$a''"
-echo ''$''"$$$$$$$$$""$''home""$a''"
-echo "$''""$$$$$$$$$""$''home""$a''"
-
+echo "$HOME"''$'HOME'
+echo "$HOME"''$'HOME'$''
+echo "$HOME"''$'HOME'$''$'$""'
+echo "$HOME"''$'HOME'$''$'$""'"$""$''$"
 
 ********************************************************************
 **************************** [SYNTAX] ******************************
@@ -197,12 +194,23 @@ asdf<'' | <|
 
 ''>''""">>">a">>>>"
 
-***************************************************************************
-**************************** [ENV && EXPORT] ******************************
-***************************************************************************
+echo "   ""$$$$$""$''home""$a''"
+echo '   '"$$$$$""$''home""$a''"
+echo "$$$"$"$''home""$a''"
+echo $$$$$$$$"$ab''home"
+echo $$$$'$'$"$"
+echo "$$$"$"''PATH''HOMEAlk"
+echo "$$$$$$$$$""$''home""$a''"
+echo """$$$$$""$''home""$a''"
+echo "$$$$$$$$$""$''home""$a''"
+echo $"$$$$$$$$$""$''home""$a''"
+echo ''$''"$$$$$$$$$""$''home""$a''"
+echo "$''""$$$$$$$$$""$''home""$a''"
+echo "$'A'$qwer$$$"
 
-export          ==1
 
+********************************************************************
+****************************** [+@] ********************************
+********************************************************************
 
-
-
+<< END wc -l
