@@ -1,12 +1,14 @@
 [0. BASIC TEST]
-3 599 200 200				-> must die
-200 410 200 200				-> maybe
-199 599 200 200 			-> must die
-199 1000 200 200			-> must live
-4 410 200 200
-200 410 200 200
 
+./philo 3 599 200 200				-> must die
+./philo 200 410 200 200				-> maybe
+./philo 199 599 200 200 			-> must die
+./philo 199 1000 200 200			-> must live
+./philo 4 410 200 200
+./philo 200 410 200 200
 
+./philo 1 1 200 1
+./philo 1 1 200 1 1
 describe thread (쓰레드가 뭔지)
 if usleep is split into pieces he/she should be able to explain "WHY" 
 (유슬립 나눠줬다면 왜 나눴는지 -> 나눔으로서 어떠한 효과가 있는지 설명할 수 있어야 함)
