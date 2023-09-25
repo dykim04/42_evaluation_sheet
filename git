@@ -1,0 +1,15 @@
+
+-> 새로고침
+git fetch
+
+-> 깃 브랜치 로컬 환경만 보기
+git branch -vv :: local 에 있는것만 보여줌
+
+-> 깃 브랜치 모든거 보기
+git branch -a
+
+-> 깃 브랜치 새로 만들면서 가져오기
+git branch -t cmd2 origin/cmd2
+
+-> 깃 브랜치 지우기
+git branch -d cmd2
