@@ -17,18 +17,4 @@ git branch -d cmd2
 git add .
 git stash
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-> git merge origin/here_doc
