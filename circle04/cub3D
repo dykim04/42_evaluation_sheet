@@ -1,0 +1,4 @@
+-> top | grep cub3D :: memory가 유지되어야 함
+-> xpm 파일 수정 후 mlx->img == NULL return 될때, segmentation fault가 나지 않는지 확인하기.
+-> meta-character :: option + g
+-> leaks
