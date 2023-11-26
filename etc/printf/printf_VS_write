@@ -1,0 +1,75 @@
+[v] what's the difference between printf and write function in C programming language?
+
+	The printf function and the write function in the C programming language serve different purposes.
+	The printf function is used to format and print output to the standard output stream (usually the console).
+	It allows you to specify a format string and any number of arguments that will be inserted into the format string.
+	It supports various format specifiers for different data types, such as %d for integers, %f for floating-point numbers, %s for strings, and so on.
+	The printf function automatically converts the provided arguments to the specified format and displays the result on the console.
+
+	On the other hand, the write function is a lower-level function that is used to "write data directly to a file descriptor.
+	It takes the file descriptor as the first argument, a buffer containing the data to be written as the second argument, and the number of bytes to write as the third argument.
+	The write function does not perform any formatting or conversion of the data.
+	It simply writes the raw bytes from the buffer to the specified file descriptor.
+	In summary, printf is used for formatted output to the console, while write is used for writing raw data to a file descriptor.
+
+[v] does printf use buffer?
+	
+	Yes, the printf function in C uses a buffer. 
+	
+	When you call printf, the formatted output is first stored in an "internal buffer" before being written to the standard output stream.
+	This buffering mechanism improves performance by reducing the number of system calls required to write data.
+
+	By default, the printf function uses a line-buffered mode, which means that the output is flushed (written to the standard output) 
+	when a newline character ('\n') is encountered or when the buffer is full.
+
+	You can also manually flush the buffer using the fflush function.
+
+	However, you can change the buffering behavior of printf by modifying the stream's buffering mode using the setvbuf function.
+
+	This allows you to switch to unbuffered mode or explicitly set the buffer size.
+
+	It's important to note that the behavior of buffering may vary depending on the platform and the specific implementation of the C library being used.
+
+[v] suppose the size of buffer is 1byte and printf function is supposed to display 2bytes, what will happen?
+
+	If the size of the buffer used by printf is 1 byte and the printf function is supposed to display 2 bytes, it will result in a buffer overflow.
+
+	A buffer overflow occurs when more data is written to a buffer than it can hold, causing the excess data to overwrite adjacent memory locations.
+	In this case, the second byte that is supposed to be displayed will overflow beyond the allocated buffer and overwrite adjacent memory.
+
+	Buffer overflows can lead to unpredictable behavior and security vulnerabilities, such as
+	crashing the program, 
+	corrupting data, 
+	or even allowing malicious code execution.
+	
+	It is important to ensure that the buffer size is sufficient to accommodate the data being written.
+
+	To avoid buffer overflows, it is recommended to allocate a buffer with a size that can accommodate the maximum expected data length. 
+	Additionally, using safer alternatives like snprintf or ensuring proper bounds checking can help prevent buffer overflow vulnerabilities.
+
+[v] what is partial write?
+
+	Partial write refers to a situation where a write operation is unable to write the entire requested amount of data in a single operation.
+	Instead, it writes only a portion of the data and returns the number of bytes actually written.
+
+	In the context of file I/O or network communication, a partial write can occur due to various reasons, 
+	such as 
+	limited buffer space, 
+	network congestion, 
+	or resource limitations. 
+	
+	When a partial write occurs, 
+	the application needs to handle the remaining data and perform additional write operations to ensure that all the data is eventually written.
+
+	For example, 
+	if you attempt to write 100 bytes of data 
+	but the underlying system can only accommodate 50 bytes at a time, 
+	
+	a partial write will occur, 
+	and the write operation will return 50 as the number of bytes written. 
+	
+	The application then needs to handle the remaining 50 bytes and perform another write operation to complete the write process.
+
+	Handling partial writes is important to ensure data integrity and proper communication between the sender and receiver.
+
+	Applications typically use "loops or callbacks" to handle partial writes and continue writing the remaining data until all the data has been successfully written.
