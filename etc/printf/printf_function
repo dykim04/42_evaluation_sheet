@@ -1,0 +1,44 @@
+[v] 가끔 printf를 쓰다가 개행을 만나야지만 출력이 되는 경우가 있었는데, 그건 왜 그런거야?
+
+printf 함수는 버퍼링(buffering)을 사용하는데, 
+이는 출력을 즉시 수행하는 것이 아니라
+일정량의 데이터가 모일 때까지 기다렸다가 한 번에 출력하는 방식입니다. 
+
+이는 입출력 작업의 효율성을 높이기 위한 것입니다.
+
+printf는 기본적으로 line buffering을 사용하는데, 
+이는 개행 문자(\n)를 만날 때까지 출력을 버퍼에 저장하고, 
+개행 문자를 만나면 버퍼의 내용을 한 번에 출력합니다. 
+
+따라서 개행 문자를 만나기 전까지는 printf의 출력이 화면에 나타나지 않을 수 있습니다.
+
+이를 해결하려면 fflush(stdout);를 호출하여 출력 버퍼를 강제로 비울 수 있습니다. 이렇게 하면 printf가 호출된 직후에 출력이 화면에 나타납니다.
+
+[example]
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("Hello, World!");
+    sleep(5);
+    return 0;
+}
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("Hello, World!\n");
+    sleep(5);
+    return 0;
+}
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("Hello, World!");
+    fflush(stdout);
+    sleep(5);
+    return 0;
+}

@@ -21,6 +21,11 @@
 [v]		if usleep is split into pieces he/she should be able to explain "WHY" 
 		(유슬립 나눠줬다면 왜 나눴는지 -> 나눔으로서 어떠한 효과가 있는지 설명할 수 있어야 함)
 			-> 운영체제에서 우선순위를 높임으로서 빠르고 정밀하게 처리할 수 있음
-			-> busy waiting + M
 
 [v]		usleep의 효과는 ?
+
+[v]		printf 와 redirection의 성능 차이 이유는?
+		예) ./philo 400 410 200 200 [died] VS ./philo 400 410 200 200 > output.txt [alive]
+
+		printf => system call -> overhead
+		redirection => buffer based -> less system call

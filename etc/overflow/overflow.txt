@@ -1,0 +1,3 @@
+[v] computerArchitecture::overflow concept
+-> 오버플로우란 무엇인가?
+	연산 결과가 연산 결과를 담을 레지스터보다 큰 상황을 오버플로우(overflow)라고 한다.
