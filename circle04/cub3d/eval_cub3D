@@ -1,4 +1,12 @@
--> top | grep cub3D :: memory가 유지되어야 함
--> xpm 파일 수정 후 mlx->img == NULL return 될때, segmentation fault가 나지 않는지 확인하기.
--> meta-character :: option + g
--> leaks
+top | grep cub3D :: memory가 유지되어야 함 => 메모리 증가 시 "concerning situation flag"
+xpm 파일 수정 후 mlx->img == NULL return 될때, segmentation fault가 나지 않는지 확인하기 => segmentation fault 발생 시, "crash flag"
+meta-character :: option + g => seg fault => "crash flag"
+
+leaks => leaks flag => while true; do leaks minishell; sleep 3; done;
+
+parsing => logic 설명 듣고 map testing
+			rgb 값 테스트 :: int max/min, negative value
+			순서 바꿔보기
+			' ' 테스트
+
+execution => concept 설명 듣기
